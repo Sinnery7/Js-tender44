@@ -1,0 +1,140 @@
+.header {
+  margin-top: 48px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 12;
+  &.header-sticky {
+    position: fixed;
+    margin-top: 0;
+    padding: 8px 0;
+    z-index: 12;
+    background: black;
+  }
+  &__nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: uk-fade-top-small 0.80s ease-in-out;
+  }
+  &__main {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    width: 120px;
+    margin-right: 48px;
+    margin-top: -18px;
+    &:hover {
+      text-decoration: none;
+    }
+    img {
+      width: 100%;
+    }
+    &_2 {
+      display: none;
+    }
+    &-text {
+      color: rgb(39, 232, 225);
+      display: none;
+    }
+  }
+  &__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    &.active {
+      display: none;
+    }
+
+  }
+  &__item {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    margin-right: 32px;
+    font-weight: 400;
+    @include link_hover;
+    @include line-through_white;
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+  }
+  &__phone {
+    position: relative;
+    color: white;
+    font-weight: 400;
+    margin-right: 40px;
+    font-size: 16px;
+    &-icon {
+      display: none;
+    }
+    &.active {
+      display: none;
+    }
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+    @include line-through_white;
+  }
+  &__button {
+    margin-left: 40px;
+  }
+}
+
+.animation-fade-in {
+  animation: header-fade-in linear 0.2s;
+}
+.animation-fade-out {
+  animation: header-fade-in linear 0.17s reverse;
+}
+
+.header.header-sticky {
+  .header__logo_1 {
+    display: none;
+  }
+  .header__logo {
+    display: flex;
+    margin-top: 0;
+    &_2 {
+      width: 25px;
+      height: 20px;
+      margin-right: 3px;
+      display: block;
+    }
+  }
+  .header__logo-text {
+    display: block;
+
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    margin-top: 32px;
+    &__menu {
+      display: none;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    &__phone {
+      margin-right: 24px;
+      span {
+        display: none;
+      }
+      &-icon {
+        display: block;
+      }
+    }
+  }
+}

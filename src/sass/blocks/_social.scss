@@ -1,0 +1,33 @@
+.social-link {
+  display: flex;
+  margin-left: -15px;
+  &__item {
+    position: relative;
+    margin-left: 15px;
+    font-size: 16px;
+    color: $main-color;
+    &:hover {
+      color: $main-color;
+      text-decoration: none;
+    }
+    @include line-through;
+    &_white {
+      color: white;
+      &:hover {
+        color: white;
+      }
+      @include line-through_white;
+    }
+  }
+  &__menu {
+    align-self: end;
+  }
+}
+
+@media (max-width: 991px) {
+  .social-link {
+    &__menu {
+      align-self: normal;
+    }
+  }
+}

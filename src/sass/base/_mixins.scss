@@ -1,0 +1,47 @@
+@mixin link_hover {
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+ }
+
+@mixin line-through {
+  &:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $main-color;
+    transform-origin:  0% 50%;
+    transform:scaleX(0);
+    transition: transform-origiin ease-in-out 0.5s, transform ease-in-out 0.5s;
+  }
+  &:hover:after {
+    transform-origin: 0% 100%;
+    transform:scaleX(1);
+  }
+}
+
+@mixin line-through_white {
+  &:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform-origin:  0% 50%;
+    transform:scaleX(0);
+    transition: transform-origiin ease-in-out 0.5s, transform ease-in-out 0.5s;
+  }
+  &:hover:after {
+    transform-origin: 0% 100%;
+    transform:scaleX(1);
+  }
+}
+

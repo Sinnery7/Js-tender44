@@ -1,0 +1,133 @@
+.case {
+  padding: 64px 0;
+  &__wrapper {
+    padding: 0 76px;
+    margin-left: -48px;
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-item {
+    width: calc(100% * 1 / 3.001);
+    padding-left: 48px;
+    outline: none;
+    &:nth-child(2) {
+      margin-top: 60px;
+    }
+    &:nth-child(4) {
+      display: none;
+    }
+    &__shadow {
+      display: block;
+      width: 100%;
+      max-height: 300px;
+      background: #000;
+      transition: opacity 324ms linear, transform 324ms;
+      border-radius: 8px;
+    }
+    &__img {
+      opacity: 1;
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: opacity 324ms linear, transform 324ms;
+    }
+    &__subtitle {
+      margin-top: 16px;
+      color: #000;
+      font-size: 24px;
+      line-height: 1.3;
+    }
+    &__desc {
+      margin-top: 20px;
+    }
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+      img {
+        opacity: 0.8;
+      }
+      .case-item__shadow {
+        transform: scale(0.965);
+      }
+      .case-item__subtitle {
+        text-decoration: none;
+        color: $main-color;
+      }
+      .carousel-item__desc {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .case {
+    &__wrapper {
+      padding: 0 48px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .case {
+    &__wrapper {
+      margin-left: -32px;
+      margin-top: 32px;
+    }
+    &-item {
+      padding-left: 32px;
+      &__subtitle {
+        font-size: 22px;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .case {
+    padding: 48px 0;
+    &__wrapper {
+      padding: 0 32px;
+    }
+    &-item {
+      width: 50%;
+      &__subtitle {
+        font-size: 20px;
+      }
+      &:nth-child(2) {
+        margin-top: 48px;
+      }
+      &:nth-child(4) {
+        margin-top: 48px;
+        display: block;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .case {
+    &-item {
+      &:nth-child(2) {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .case {
+    &__wrapper {
+      padding: 0 15px;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .case {
+    &-item {
+      &__subtitle {
+        font-size: 14px;
+      }
+    }
+  }
+}
